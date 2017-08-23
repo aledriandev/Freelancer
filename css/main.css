@@ -5,6 +5,44 @@
  	width: 100%;
  }
 
- header{
- 	background-color: red;
+header{
+	width: 100%;
+ 	background-color: #003c47;
+ 	position: fixed;
+ 	top: 0;
+ 	font-family: "Baloo Paaji"
+}
+
+header:hover .title{
+	font-size: 100%;
+}
+
+li{
+	display: inline-block;
+}
+
+li a{
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+}
+li a:hover {
+	background-color: #14b78e;
+}
+
+.title{
+ 	color: #fff;
+ 	position: absolute;
+ 	left: 200px;
+ 	top: 50%;
+  	transform: translate(-50%, -50%);
+ 	padding: 0 30px;
+ 	font-size: 80%;
+
+ }
+
+ .menu{
+ 	position: absolute;
+ 	right: 0;
  }
