@@ -122,14 +122,14 @@ hr{
 	height: 5px;
 	background-color: white;
 	border: none;
-	top: -10px;
+	top: 10px;
 }
 
 .line-black{
 	height: 5px;
 	background-color: #003c47;
 	border: none;
-	top: -10px;
+	top: 10px;
 }
 
 #portafolio{
@@ -181,7 +181,7 @@ form input{
 	padding: 10px;
 	margin: 10px;
 	font-family: "Asap";
-	font-size: 75%;
+	font-size: 90%;
 }
 
 form button{
@@ -192,7 +192,7 @@ form button{
 	border: none;
 	cursor: pointer;
 	font-family: "Asap";
-	font-size: 75%;
+	font-size: 100%;
 	color: white;
 }
 
@@ -204,6 +204,11 @@ form button{
 
 .content{
 	font-size: 84%;
+}
+
+.content a{
+	color: #14b78e;
+	text-decoration: none;
 }
 
 footer{
