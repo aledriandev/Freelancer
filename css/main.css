@@ -167,3 +167,44 @@ p{
 #download:hover{
 	background-color: rgba(255, 255, 255, 0.5);
 }
+#contact-dates{
+	color:  #003c47;
+}
+
+form{
+	width: 50%;
+	padding: 10px;
+	text-align: left;
+}
+
+form input{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+	font-family: "Asap";
+	font-size: 75%;
+}
+
+form button{
+	background-color:  #14b78e;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	font-family: "Asap";
+	font-size: 75%;
+	color: white;
+}
+
+#contact-web{
+	color: white;
+	background-color:  #003c47;
+}
+
+.content{
+	width: 30%;
+	height: 200px;
+	display: inline-block;
+}
