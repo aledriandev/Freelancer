@@ -1,7 +1,7 @@
 /*
  * Estilos reutilizables
  */
-.row:before, .eow:after{
+.row:before, .row:after{
 	content: " ";
 	display: table;
 }
@@ -12,7 +12,7 @@
 
 [class*="col-"]{
 	min-height: 30px;
-	padding: 5px;
+	padding: 50px;
 	float: left;	
 }
 
