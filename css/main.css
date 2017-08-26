@@ -93,6 +93,10 @@ h2{
  	font-size: 80%;
 }
 
+.selection{
+	background-color: #14b78e;
+}
+
 #presentation{
 	margin: auto;
 	background-color: #14b78e;

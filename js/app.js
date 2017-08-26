@@ -4,6 +4,7 @@
 var body = document.getElementsByTagName("BODY")[0];
 	body.setAttribute('onscroll','bar()');
 
+
 var headerHTML = document.getElementById('headerHTML');
 var presentation = document.getElementById('presentation');
 
@@ -12,10 +13,52 @@ var projectTitle = ['CABIN PROJECT','CAKE PROJECT','CIRCUS PROJECT','GAME PROJEC
 var portaforlio = document.getElementById('img-portafolio');
 var arrayPortafolio =[];
 
+//PARA SABER LA POSICION DE LA BARRA, sin afectar por el tamaño de la pantalla
+var sectionAbout = document.getElementById('about');
+var sectionPortafolio = document.getElementById('portafolio');
+var sectionContact = document.getElementById('contact');
+
+//ancho de cada section
+var altoBody = body.offsetHeight;
+var altoPresentation = presentation.offsetHeight;
+var altoAbout = sectionAbout.offsetHeight;
+var altoPortafolio = sectionPortafolio.offsetHeight;
+var altoContact = sectionContact.offsetHeight;
+
+//href para cada section
+var aAbout = document.getElementById('aAbout');
+var aPortafolio = document.getElementById('aPortafolio');
+var aContact = document.getElementById('aContact');
+
+//altura de cada section
+var hastaPortafolio = altoPresentation + altoPortafolio;
+var hastaAbout = hastaPortafolio + altoAbout;
+var hastaContact = hastaAbout + altoContact;
+
+
 function bar() {
 	if (body.scrollTop > 0) {
 		headerHTML.classList.add('header2');
 		presentation.classList.add('presentation2');
+		if (body.scrollTop <= altoPresentation) {
+			aPortafolio.classList.remove('selection');
+		}
+		else if (body.scrollTop > altoPresentation && body.scrollTop <= hastaPortafolio) {
+			aPortafolio.classList.add('selection');
+			aAbout.classList.remove('selection');
+		}
+		else if (body.scrollTop > hastaPortafolio && body.scrollTop <= hastaAbout) {
+			aAbout.classList.add('selection');
+			aPortafolio.classList.remove('selection');
+			aContact.classList.remove('selection');
+		}
+		else if (body.scrollTop > hastaAbout && body.scrollTop <= hastaContact) {
+			aAbout.classList.remove('selection');
+			aContact.classList.add('selection');
+		} else {
+			aContact.classList.remove('selection');
+		}
+
 	}else{
 		headerHTML.classList.remove('header2');
 		presentation.classList.remove('presentation2');
@@ -54,7 +97,7 @@ function expent(event){
 	var position = arrayPortafolio.indexOf(event);
 		fondoProject = document.createElement('div'); // es donde se ubicara la imagen
 		fondoProject.setAttribute('class','fondo');
-		divImg = document.createElement('div');
+		divImg = document.createElement('div'); //div que contiene el contenido
 		divImg.setAttribute('class', 'div-img');
 	var title = document.createElement('h1');
 		var t = document.createTextNode(projectTitle[position]);
@@ -96,8 +139,9 @@ function expent(event){
 		fondoProject.appendChild(divImg);
 		portafolio.appendChild(fondoProject);
 
-		body.style.overflowY = 'hidden';
+		body.style.overflowY = 'hidden'; //desactiva l escroll del body, para que solo se muestre el del div 'fondo'
 		
+		/*FUNCION CLOSE*/
 		closeProject.addEventListener('click',function(){
 			portafolio.removeChild(fondoProject);
 			body.style.overflowY = 'scroll';
