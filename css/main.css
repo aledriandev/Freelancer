@@ -136,14 +136,64 @@ hr{
 #portafolio{
 	background-color: white;
 	color: #003c47;
-	height: 900px;
+	height: 1000px;
+	overflow: hidden;
 }
 
 #img-portafolio{
 	position: absolute;
 }
 
+.div-portafolio{
+	position: relative;
+}
+
+.expent{
+	background-color: rgb(20, 183, 142);
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.9s ease-in-out;
+}
+	
+.expent:hover{
+	opacity: 0.8;
+}
+
+.expent span{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.fondo{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	padding: 20px;	 
+	position: fixed;
+	top: 0;
+	z-index: 1000000000;
+	color: #003c47;
+	text-align: center;
+	overflow-y: scroll;
+}
+
+.div-img{
+	width: 75%;
+}
+
+.div-img img{
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
 #portafolio, #about, #contact{
+	padding-top: 50px;
 	font-size: 120%;
 }
 
