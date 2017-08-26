@@ -45,12 +45,16 @@ for (var i = 0; i < imgPortafolio.length; i++) {
 	rowPortafolio.appendChild(colImgPortafolio);
 }
 
+var fondoProject;
+var divImg;
+var contentProject = document.getElementById('text-project');
+
 function expent(event){
-	
+
 	var position = arrayPortafolio.indexOf(event);
-	var fondo = document.createElement('div'); // es donde se ubicara la imagen
-		fondo.setAttribute('class','fondo');
-	var divImg = document.createElement('div');
+		fondoProject = document.createElement('div'); // es donde se ubicara la imagen
+		fondoProject.setAttribute('class','fondo');
+		divImg = document.createElement('div');
 		divImg.setAttribute('class', 'div-img');
 	var title = document.createElement('h1');
 		var t = document.createTextNode(projectTitle[position]);
@@ -64,11 +68,43 @@ function expent(event){
 	var	imgBig = document.createElement('img'); 
 		imgBig.src ='assets/images/portfolio/' + imgPortafolio[position];
 		imgBig.setAttribute('class','img-big');
+
+
+	var closeProject = document.createElement('button');
+		closeProject.setAttribute('class','btn-close');
+	var spanProjectClose = document.createElement('span');
+		spanProjectClose.setAttribute('class','fa fa-times');
+	var close = document.createTextNode('Close');
+		closeProject.appendChild(spanProjectClose);
+		closeProject.appendChild(close);
+
+	var divSpan = document.createElement('div');
+	var spanProject = document.createElement('span');
+		spanProject.setAttribute('class','fa fa-times fa-5x');
+		divSpan.appendChild(spanProject);
+		divSpan.setAttribute('class','cerrar');
+
 		divImg.appendChild(title);
 		divImg.appendChild(hr1);
 		divImg.appendChild(star);
 		divImg.appendChild(hr2);
+		divImg.appendChild(divSpan);
 		divImg.appendChild(imgBig);
-		fondo.appendChild(divImg);
-		portafolio.appendChild(fondo);
+		divImg.appendChild(contentProject)
+		contentProject.style.display = "block";
+		divImg.appendChild(closeProject);
+		fondoProject.appendChild(divImg);
+		portafolio.appendChild(fondoProject);
+
+		body.style.overflowY = 'hidden';
+		
+		closeProject.addEventListener('click',function(){
+			portafolio.removeChild(fondoProject);
+			body.style.overflowY = 'scroll';
+		});
+
+		spanProject.addEventListener('click',function(){
+			portafolio.removeChild(fondoProject);
+			body.style.overflowY = 'scroll';
+		});
 }

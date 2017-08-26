@@ -40,7 +40,7 @@ header{
  	background-color: #003c47;
  	position: fixed;
  	top: 0;
- 	z-index: 1000000;
+ 	z-index: 100;
  	font-family: "Baloo Paaji"
 }
 
@@ -176,10 +176,29 @@ hr{
 	padding: 20px;	 
 	position: fixed;
 	top: 0;
-	z-index: 1000000000;
+	z-index: 1000;
 	color: #003c47;
 	text-align: center;
 	overflow-y: scroll;
+}
+
+.fondo::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.fondo::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+	border-radius: 3px;
+}
+
+.fondo::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
 }
 
 .div-img{
@@ -195,6 +214,50 @@ hr{
 #portafolio, #about, #contact{
 	padding-top: 50px;
 	font-size: 120%;
+}
+
+.cerrar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	width: 100px;
+	height: 100px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.cerrar:hover{
+	opacity: 1;
+}
+
+.div-img a{
+	color: #14b78e;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.div-img a:hover {
+	color: #003c47;
+}
+
+.div-img p{
+	margin: 20px 0;
+}
+
+.btn-close{
+	background-color: transparent;
+	border: 2px solid #003c47;
+	color: #003c47;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 120%;
+}
+
+.btn-close:hover{
+	background-color: rgba(20, 183, 142, 0.3);
+	cursor: pointer; 
 }
 
 #about{
